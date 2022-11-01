@@ -6,7 +6,7 @@ Console.Clear();
 
 string currentLocation = Directory.GetCurrentDirectory();
 Random rnd = new Random();
-List<Contact> contacts = new List<Contact>(){};
+List<> contacts = new List<Contact>();
 
 // check for json
 string jsonCurrentPath = @$"{currentLocation}/data.json";
@@ -20,10 +20,6 @@ if (jsonExists)
 else
 {
     contacts.Clear();
-    contacts.Add(new Contact("Kung Fu Panada", "theRealPanda@gmail.com", "+1 (THE) FUU LINE"));
-    contacts.Add(new Contact("Weenie The Pooie", "thePooie@gmail.com", "+1 (OOP) JUS POOO"));
-    contacts.Add(new Contact("A Dragon", "aRealDragon@gmail.com", "+1 (NOT) SUS @ALL"));
-    string jsonString = JsonSerializer.Serialize(contacts);
     File.WriteAllText(jsonCurrentPath, jsonString);
 }
 
@@ -35,7 +31,7 @@ while (loop)
     Console.Clear();
     Console.WriteLine($"MAIN MENU ({userName})");
     Console.WriteLine("    1. Display All Data");
-    Console.WriteLine("    2. Search/Filter for a Product");
+    Console.WriteLine("    2. Search/Filter for a Product"); 
     Console.WriteLine("    3. Sort Price");
     Console.WriteLine("    4. Shopping Cart");
     Console.WriteLine("    5. Checkout");
@@ -46,7 +42,7 @@ while (loop)
 
     if (mainMenuChoice == 1)
     {
-        Console.WriteLine("DISPLAY CONTACTS NAMES");
+        Console.WriteLine("DISPLAY ALL DATA");
         for (int i = 0; i < contacts.Count(); i++)
         {
             contacts[i].writeAllInfo();
