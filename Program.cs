@@ -2,36 +2,38 @@
 #nullable disable
 using System.Text.Json;
 using ConsoleApp;
+
 Console.Clear();
 
-string currentLocation = Directory.GetCurrentDirectory();
 Random rnd = new Random();
-List<> contacts = new List<Contact>();
+List<Product> products = new List<Product>();
+bool loop;
 
 // check for json
-string jsonCurrentPath = @$"{currentLocation}/data.json";
+string currentLocation = Directory.GetCurrentDirectory();
+string jsonCurrentPath = @$"{currentLocation}/products.json";
 bool jsonExists = File.Exists(jsonCurrentPath);
 
 if (jsonExists)
 {
     string jsonStringFromFile = File.ReadAllText(jsonCurrentPath);
-    contacts = JsonSerializer.Deserialize<List<Contact>>(jsonStringFromFile);
+    products = JsonSerializer.Deserialize<List<Product>>(jsonStringFromFile);
+    loop = true;
 }
 else
 {
-    contacts.Clear();
-    File.WriteAllText(jsonCurrentPath, jsonString);
+    Console.Write("ERROR - NO PRODUCTS JSON FOUND");
+    loop = false;
 }
 
 // actual program
-bool loop = true;
 while (loop)
 {
     string userName = "bob the builder";
     Console.Clear();
     Console.WriteLine($"MAIN MENU ({userName})");
     Console.WriteLine("    1. Display All Data");
-    Console.WriteLine("    2. Search/Filter for a Product"); 
+    Console.WriteLine("    2. Search/Filter for a Product");
     Console.WriteLine("    3. Sort Price");
     Console.WriteLine("    4. Shopping Cart");
     Console.WriteLine("    5. Checkout");
@@ -43,15 +45,12 @@ while (loop)
     if (mainMenuChoice == 1)
     {
         Console.WriteLine("DISPLAY ALL DATA");
-        for (int i = 0; i < contacts.Count(); i++)
-        {
-            contacts[i].writeAllInfo();
-        }
+        Console.WriteLine(File.ReadAllText(jsonCurrentPath));
     }
     if (mainMenuChoice == 2)
     {
         Console.WriteLine("SEARCH FOR CONTACTS");
-        Console.Write("Enter a Vaild Name: ");
+        Console.Write("Enter a Product Name: ");
         string searchName = Console.ReadLine();
         for (int i = 0; i < contacts.Count(); i++)
         {
@@ -140,7 +139,6 @@ while (loop)
 
     Console.WriteLine();
 
-    
     Console.WriteLine("");
     Console.WriteLine("Back to Main Menu?");
     Console.Write("-> ");
