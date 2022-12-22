@@ -4,7 +4,6 @@ using System.Text.Json;
 using ConsoleApp;
 
 Console.Clear();
-
 Random rnd = new Random();
 List<Product> products = new List<Product>();
 bool loop;
@@ -18,22 +17,20 @@ if (jsonExists)
 {
     string jsonStringFromFile = File.ReadAllText(jsonCurrentPath);
     products = JsonSerializer.Deserialize<List<Product>>(jsonStringFromFile);
-    loop = true;
 }
 else
 {
-    Console.Write("ERROR - NO PRODUCTS JSON FOUND");
-    loop = false;
+    Environment.Exit(1);
 }
 
 // actual program
-while (loop)
+while (true)
 {
     string userName = "bob the builder";
     Console.Clear();
     Console.WriteLine($"MAIN MENU ({userName})");
     Console.WriteLine("    1. Display All Data");
-    Console.WriteLine("    2. Search/Filter for a Product");
+    Console.WriteLine("    2. Filter for Products Catagory");
     Console.WriteLine("    3. Sort Price");
     Console.WriteLine("    4. Shopping Cart");
     Console.WriteLine("    5. Checkout");
@@ -49,81 +46,11 @@ while (loop)
     }
     if (mainMenuChoice == 2)
     {
-        Console.WriteLine("SEARCH FOR CONTACTS");
-        Console.Write("Enter a Product Name: ");
-        string searchName = Console.ReadLine();
-        for (int i = 0; i < contacts.Count(); i++)
-        {
-            if (contacts[i].Name.ToLower() == searchName.ToLower())
-            {
-                Console.WriteLine("------------");
-                Console.WriteLine(
-                    $"Name: {contacts[i].Name} \nEmail: {contacts[i].Email} \nPhone Number: {contacts[i].PhoneNumber}"
-                );
-            }
-        }
-    }
-    if (mainMenuChoice == 3)
-    {
-        Console.WriteLine("EDIT CONTACT");
-        Console.Write("Enter a Vaild Name: ");
-        string searchName = Console.ReadLine();
-
-        for (int i = 0; i < contacts.Count(); i++)
-        {
-            if (contacts[i].Name.ToLower() == searchName.ToLower())
-            {
-                Console.WriteLine("------------\n press enter to not edit info \n------------");
-                Console.Write("Edit Name: ");
-                string newName = Console.ReadLine();
-                if (newName != "")
-                {
-                    contacts[i].Name = newName;
-                }
-                Console.Write("Edit Email: ");
-                string newEmail = Console.ReadLine();
-                if (newEmail != "")
-                {
-                    contacts[i].Email = newEmail;
-                }
-                Console.Write("Edit Phone Number: ");
-                string newPhoneNumber = Console.ReadLine();
-                if (newPhoneNumber != "")
-                {
-                    contacts[i].PhoneNumber = newPhoneNumber;
-                }
-            }
-        }
-    }
-    if (mainMenuChoice == 4)
-    {
-        Console.WriteLine("NEW CONTACT");
-        Console.WriteLine("------------");
-        Console.Write("New Name: ");
-        string newName = Console.ReadLine();
-
-        Console.Write("New Email: ");
-        string newEmail = Console.ReadLine();
-
-        Console.Write("New Phone Number: ");
-        string newPhoneNumber = Console.ReadLine();
-
-        contacts.Add(new Contact(newName, newEmail, newPhoneNumber));
-    }
-    if (mainMenuChoice == 5)
-    {
-        Console.WriteLine("REMOVE CONTACT");
-        Console.Write("Enter a Vaild Name: ");
-        string searchName = Console.ReadLine();
-        for (int i = 0; i < contacts.Count(); i++)
-        {
-            if (contacts[i].Name.ToLower() == searchName.ToLower())
-            {
-                Console.WriteLine("------------");
-                Console.WriteLine($"Name: {contacts[i].Name}\n ---- REMOVED ----");
-                contacts.RemoveAt(i);
-            }
-        }
+        Console.WriteLine(
+            "Filter for Product Catagory\nCatagories avilable are: Bedroom, Living Room, Bathroom;"
+        );
+        Console.Write("Filter for: ");
+        for (int i = 0; i < products.Count(); i++) { }
     }
     if (mainMenuChoice == 6)
     {
@@ -131,7 +58,7 @@ while (loop)
         string answer = Console.ReadLine().ToLower();
         if (answer == "y")
         {
-            string jsonString2 = JsonSerializer.Serialize(contacts);
+            string jsonString2 = JsonSerializer.Serialize(products);
             File.WriteAllText(jsonCurrentPath, jsonString2);
         }
         break;
