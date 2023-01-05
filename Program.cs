@@ -8,7 +8,8 @@ using ConsoleApp;
 Console.Clear();
 Random rnd = new Random();
 List<Product> products = new List<Product>();
-User userInfo;
+List<User> userList = new List<User>();
+User currentUser;
 
 // JSON stuff
 string currentLocation = Directory.GetCurrentDirectory();
@@ -34,20 +35,46 @@ string userJsonCurrentPath = @$"{currentLocation}/user.json";
 
 if (File.Exists(userJsonCurrentPath))
 {
-    userInfo = JsonSerializer.Deserialize<User>(File.ReadAllText(userJsonCurrentPath));
-}
-else
-{
-    Console.WriteLine("NO USER DATA FOUND...SIGN UP");
-    Console.Write("Username: "); string username = Console.ReadLine();
-    userInfo = new User(username, new List<int>());
+    userList = JsonSerializer.Deserialize<List<User>>(File.ReadAllText(userJsonCurrentPath));
 }
 
+while (true)
+{
+    Console.Clear();
+    Console.WriteLine("Select a User");
+    for (int i = 0; i < userList.Count; i++)
+    {
+        Console.WriteLine($"{i + 1}. {userList[i].Username}");
+    }
+    Console.WriteLine($"{userList.Count + 1}. Create a New Account");
+    Console.Write("-> "); int userChoice = Convert.ToInt32(Console.ReadLine());
+    Console.Clear();
+    if (userList.Count + 1 == userChoice)
+    {
+        User.Create(userList);
+        currentUser = userList[0];
+    }
+    else
+    {
+        Console.Write($"Welcome {userList[userChoice - 1].Username}\nEnter Password: ");
+        if (Console.ReadLine() == userList[userChoice - 1].Password)
+        {
+            currentUser = userList[userChoice - 1];
+            break;
+        }
+        else
+        {
+            Console.Clear();
+            Console.WriteLine("WRONG PASSWORD, Returning...");
+            Thread.Sleep(3000);
+        }
+    }
+}
 // actual program
 while (true)
 {
     Console.Clear();
-    Console.WriteLine($"MAIN MENU ({userInfo.Username})");
+    Console.WriteLine($"MAIN MENU ({currentUser.Username})");
     Console.WriteLine("    1. Display All Data");
     Console.WriteLine("    2. Filter by Catagory");
     Console.WriteLine("    3. Sort by Price");
@@ -92,7 +119,7 @@ while (true)
         Console.WriteLine("ADD TO SHOPPING CART");
         Console.Write("Product to Add (name or id): ");
         string shoppingCartAdd = Console.ReadLine();
-        int shoppingCartLen = userInfo.ShoppingCart.Count;
+        int shoppingCartLen = currentUser.ShoppingCart.Count;
         try
         {
             int result = int.Parse(shoppingCartAdd);
@@ -106,7 +133,7 @@ while (true)
             }
             if (result <= largest)
             {
-                userInfo.ShoppingCart.Add(result);
+                currentUser.ShoppingCart.Add(result);
             }
         }
         catch (FormatException)
@@ -115,11 +142,11 @@ while (true)
             {
                 if (products[i].Name.ToLower() == shoppingCartAdd.ToLower())
                 {
-                    userInfo.ShoppingCart.Add(products[i].Id);
+                    currentUser.ShoppingCart.Add(products[i].Id);
                 }
             }
         }
-        if (shoppingCartLen < userInfo.ShoppingCart.Count)
+        if (shoppingCartLen < currentUser.ShoppingCart.Count)
         {
             Console.WriteLine("SUCESS! Added to Cart");
         }
@@ -133,12 +160,12 @@ while (true)
         Console.WriteLine("REMOVE TO SHOPPING CART");
         Console.Write("Product to Remove (name or id): ");
         string shoppingCartRemove = Console.ReadLine();
-        int shoppingCartLen = userInfo.ShoppingCart.Count;
+        int shoppingCartLen = currentUser.ShoppingCart.Count;
         try
         {
-            if (userInfo.ShoppingCart.Contains(int.Parse(shoppingCartRemove)))
+            if (currentUser.ShoppingCart.Contains(int.Parse(shoppingCartRemove)))
             {
-                userInfo.ShoppingCart.Remove(int.Parse(shoppingCartRemove));
+                currentUser.ShoppingCart.Remove(int.Parse(shoppingCartRemove));
             }
         }
         catch (FormatException)
@@ -147,11 +174,11 @@ while (true)
             {
                 if (products[i].Name.ToLower() == shoppingCartRemove.ToLower())
                 {
-                    userInfo.ShoppingCart.Remove(products[i].Id);
+                    currentUser.ShoppingCart.Remove(products[i].Id);
                 }
             }
         }
-        if (shoppingCartLen > userInfo.ShoppingCart.Count)
+        if (shoppingCartLen > currentUser.ShoppingCart.Count)
         {
             Console.WriteLine("SUCESS! Removed from Cart");
         }
@@ -166,7 +193,7 @@ while (true)
         Console.WriteLine("Your Cart: ");
 
         Dictionary<int, int> quantity = new Dictionary<int, int>();
-        foreach (int numbers in userInfo.ShoppingCart)
+        foreach (int numbers in currentUser.ShoppingCart)
         {
             if (quantity.ContainsKey(numbers))
             {
@@ -191,8 +218,8 @@ while (true)
     }
     if (mainMenuChoice == 7)
     {
-        File.WriteAllText(userJsonCurrentPath, JsonSerializer.Serialize(userInfo, options));
-        Console.WriteLine("Thank you for using our product {0}! Bye!", userInfo.Username);
+        File.WriteAllText(userJsonCurrentPath, JsonSerializer.Serialize(userList, options));
+        Console.WriteLine("Thank you for using our product {0}! Bye!", currentUser.Username);
         break;
     }
 

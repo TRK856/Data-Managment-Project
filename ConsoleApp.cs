@@ -1,3 +1,4 @@
+#nullable disable
 namespace ConsoleApp
 {
     public class Sort
@@ -38,11 +39,21 @@ namespace ConsoleApp
     public class User
     {
         public string Username { get; set; }
+        public string Password { get; set; }
+
         public List<int> ShoppingCart { get; set; }
-        public User(string Username, List<int> ShoppingCart)
+        public User(string Username, string Password, List<int> ShoppingCart)
         {
             this.Username = Username;
+            this.Password = Password;
             this.ShoppingCart = ShoppingCart;
+        }
+
+        public static void Create(List<User> userList)
+        {
+            Console.Write("Username: "); string username = Console.ReadLine();
+            Console.Write("Password: "); string password = Console.ReadLine();
+            userList.Add(new User(username, password, new List<int>()));
         }
     }
     public class Product
