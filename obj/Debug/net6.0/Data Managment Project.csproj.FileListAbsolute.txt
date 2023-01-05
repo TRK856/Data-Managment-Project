@@ -1,15 +1,30 @@
-F:\CS30\Data Managment Project\bin\Debug\net6.0\Data Managment Project.exe
-F:\CS30\Data Managment Project\bin\Debug\net6.0\Data Managment Project.deps.json
-F:\CS30\Data Managment Project\bin\Debug\net6.0\Data Managment Project.runtimeconfig.json
-F:\CS30\Data Managment Project\bin\Debug\net6.0\Data Managment Project.dll
-F:\CS30\Data Managment Project\bin\Debug\net6.0\Data Managment Project.pdb
-F:\CS30\Data Managment Project\obj\Debug\net6.0\Data Managment Project.csproj.AssemblyReference.cache
-F:\CS30\Data Managment Project\obj\Debug\net6.0\Data Managment Project.GeneratedMSBuildEditorConfig.editorconfig
-F:\CS30\Data Managment Project\obj\Debug\net6.0\Data Managment Project.AssemblyInfoInputs.cache
-F:\CS30\Data Managment Project\obj\Debug\net6.0\Data Managment Project.AssemblyInfo.cs
-F:\CS30\Data Managment Project\obj\Debug\net6.0\Data Managment Project.csproj.CoreCompileInputs.cache
-F:\CS30\Data Managment Project\obj\Debug\net6.0\Data Managment Project.dll
-F:\CS30\Data Managment Project\obj\Debug\net6.0\refint\Data Managment Project.dll
-F:\CS30\Data Managment Project\obj\Debug\net6.0\Data Managment Project.pdb
-F:\CS30\Data Managment Project\obj\Debug\net6.0\Data Managment Project.genruntimeconfig.cache
-F:\CS30\Data Managment Project\obj\Debug\net6.0\ref\Data Managment Project.dll
+F:/CS30/Data Managment Project/bin/Debug/net6.0/Data Managment Project.exe
+F:/CS30/Data Managment Project/bin/Debug/net6.0/Data Managment Project.deps.json
+F:/CS30/Data Managment Project/bin/Debug/net6.0/Data Managment Project.runtimeconfig.json
+F:/CS30/Data Managment Project/bin/Debug/net6.0/Data Managment Project.dll
+F:/CS30/Data Managment Project/bin/Debug/net6.0/Data Managment Project.pdb
+F:/CS30/Data Managment Project/obj/Debug/net6.0/Data Managment Project.csproj.AssemblyReference.cache
+F:/CS30/Data Managment Project/obj/Debug/net6.0/Data Managment Project.GeneratedMSBuildEditorConfig.editorconfig
+F:/CS30/Data Managment Project/obj/Debug/net6.0/Data Managment Project.AssemblyInfoInputs.cache
+F:/CS30/Data Managment Project/obj/Debug/net6.0/Data Managment Project.AssemblyInfo.cs
+F:/CS30/Data Managment Project/obj/Debug/net6.0/Data Managment Project.csproj.CoreCompileInputs.cache
+F:/CS30/Data Managment Project/obj/Debug/net6.0/Data Managment Project.dll
+F:/CS30/Data Managment Project/obj/Debug/net6.0/refint/Data Managment Project.dll
+F:/CS30/Data Managment Project/obj/Debug/net6.0/Data Managment Project.pdb
+F:/CS30/Data Managment Project/obj/Debug/net6.0/Data Managment Project.genruntimeconfig.cache
+F:/CS30/Data Managment Project/obj/Debug/net6.0/ref/Data Managment Project.dll
+/Users/taharehankamil/Downloads/VSCode/Data-Managment-Project/obj/Debug/net6.0/Data Managment Project.csproj.AssemblyReference.cache
+/Users/taharehankamil/Downloads/VSCode/Data-Managment-Project/obj/Debug/net6.0/Data Managment Project.GeneratedMSBuildEditorConfig.editorconfig
+/Users/taharehankamil/Downloads/VSCode/Data-Managment-Project/obj/Debug/net6.0/Data Managment Project.AssemblyInfoInputs.cache
+/Users/taharehankamil/Downloads/VSCode/Data-Managment-Project/obj/Debug/net6.0/Data Managment Project.AssemblyInfo.cs
+/Users/taharehankamil/Downloads/VSCode/Data-Managment-Project/obj/Debug/net6.0/Data Managment Project.csproj.CoreCompileInputs.cache
+/Users/taharehankamil/Downloads/VSCode/Data-Managment-Project/obj/Debug/net6.0/Data Managment Project.dll
+/Users/taharehankamil/Downloads/VSCode/Data-Managment-Project/obj/Debug/net6.0/refint/Data Managment Project.dll
+/Users/taharehankamil/Downloads/VSCode/Data-Managment-Project/obj/Debug/net6.0/Data Managment Project.pdb
+/Users/taharehankamil/Downloads/VSCode/Data-Managment-Project/bin/Debug/net6.0/Data Managment Project
+/Users/taharehankamil/Downloads/VSCode/Data-Managment-Project/bin/Debug/net6.0/Data Managment Project.deps.json
+/Users/taharehankamil/Downloads/VSCode/Data-Managment-Project/bin/Debug/net6.0/Data Managment Project.runtimeconfig.json
+/Users/taharehankamil/Downloads/VSCode/Data-Managment-Project/bin/Debug/net6.0/Data Managment Project.dll
+/Users/taharehankamil/Downloads/VSCode/Data-Managment-Project/bin/Debug/net6.0/Data Managment Project.pdb
+/Users/taharehankamil/Downloads/VSCode/Data-Managment-Project/obj/Debug/net6.0/Data Managment Project.genruntimeconfig.cache
+/Users/taharehankamil/Downloads/VSCode/Data-Managment-Project/obj/Debug/net6.0/ref/Data Managment Project.dll

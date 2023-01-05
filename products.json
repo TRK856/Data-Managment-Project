@@ -1,44 +1,44 @@
 [
-    {
-        "Name":"Sofa",
-        "Id": 1,
-        "Description":"A soft comfortable, surface for a menace to socity to scratch their paws on.",
-        "Price": 999,
-        "Category":"Living Room"
-    },
-    {
-        "Name":"Matress",
-        "Id": 2,
-        "Description":"You dont need a frame, just this matress. We dont even sell frames, and DONT YOU DARE BUY ANYTHING FORM ANYWHERE ELSE.",
-        "Price": 499,
-        "Category":"Bedroom"
-    },
-    {
-        "Name":"Bed Frame",
-        "Id": 3,
-        "Description":"Do not buy this. This product is not endorsed by our company. \n*by buying this you agree that our company is not liable for any human remains found inside.",
-        "Price": 9999999,
-        "Category":"Bedroom"
-    },
-    {
-        "Name":"Cabinet",
-        "Id": 4,
-        "Description":"Really ugly, but we will still overcharge.",
-        "Price": 7858,
-        "Category":"Bathroom"
-    },
-    {
-        "Name":"Toilet",
-        "Id": 5,
-        "Description":"AQ dutch toilet.",
-        "Price": 9999999,
-        "Category":"Bedroom"
-    },
-    {
-        "Name":"Cabinet",
-        "Id": 6,
-        "Description":"Really ugly, but we will still overcharge.",
-        "Price": 7858,
-        "Category":"Bathroom"
-    }
+  {
+    "Name": "Sofa",
+    "Id": 1,
+    "Description": "A soft comfortable, surface for a menace to socity to scratch their paws on.",
+    "Price": 999,
+    "Category": "Living Room"
+  },
+  {
+    "Name": "Matress",
+    "Id": 2,
+    "Description": "You dont need a frame, just this matress. We dont even sell frames, and DONT YOU DARE BUY ANYTHING FORM ANYWHERE ELSE.",
+    "Price": 499,
+    "Category": "Bedroom"
+  },
+  {
+    "Name": "Bed Frame",
+    "Id": 3,
+    "Description": "Do not buy this. This product is not endorsed by our company. \n*by buying this you agree that our company is not liable for any human remains found inside.",
+    "Price": 124453,
+    "Category": "Bedroom"
+  },
+  {
+    "Name": "Cabinet",
+    "Id": 4,
+    "Description": "Really ugly, but we will still overcharge.",
+    "Price": 7858,
+    "Category": "Bathroom"
+  },
+  {
+    "Name": "Toilet",
+    "Id": 5,
+    "Description": "AQ dutch toilet.",
+    "Price": 999999,
+    "Category": "Bedroom"
+  },
+  {
+    "Name": "Cabinet",
+    "Id": 6,
+    "Description": "Really ugly, but we will still overcharge.",
+    "Price": 2128,
+    "Category": "Bathroom"
+  }
 ]
